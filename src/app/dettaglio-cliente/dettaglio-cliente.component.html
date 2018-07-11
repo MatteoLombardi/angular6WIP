@@ -1,0 +1,16 @@
+<div *ngIf="cliente">
+
+  <h2>Dettaglio di {{cliente.nome | uppercase}}</h2>
+  <div><span>id: </span>{{cliente.id}}</div>
+  <div>
+    <label>nome:
+      <input [(ngModel)]="cliente.nome" placeholder="nome"/>
+    </label>
+    <label>score:
+      <input [(ngModel)]="cliente.score" placeholder="score"/>
+    </label>
+    <button (click)="goBack()">Torna indietro</button>
+    <button (click)="salva()">Salva modifiche</button>
+  </div>
+
+</div>

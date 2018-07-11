@@ -1,0 +1,10 @@
+<h3>Clienti Principali</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let cliente of clienti" class="col-1-4"
+      routerLink="/dettaglio/{{cliente.id}}">
+    <div class="module cliente">
+      <h4>{{cliente.nome}}</h4>
+      <h4>Score: {{cliente.score}}</h4>
+    </div>
+  </a>
+</div>

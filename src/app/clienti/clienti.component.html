@@ -1,0 +1,18 @@
+<h2>I nostri Clienti</h2>
+<ul class="clienti">
+  <li *ngFor="let cliente of clienti">
+    <a routerLink="/dettaglio/{{cliente.id}}">
+    <span class="badge">{{cliente.id}}</span> {{cliente.nome}}
+    </a>
+    <button class="delete" title="Elimina Cliente"
+  (click)="delete(cliente)">x</button>
+  </li>
+</ul>
+<div>
+    <label>Nuovo cliente:
+      <input #nomeCLiente />
+    </label>
+    <button (click)="add(nomeCliente.value); nomeCliente.value=''">
+      Inserisci
+    </button>
+  </div>
