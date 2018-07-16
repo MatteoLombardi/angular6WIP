@@ -21,7 +21,9 @@ export class ClienteService {
     this.messaggioService.add(`ClienteService: ` + messaggio);
   }
 
-  private urlClienti = 'api/clienti';
+  private urlClienti = '/api/values';
+  //private urlClienti = 'api/clienti';
+
 
   
   getClienti(): Observable<Cliente[]> {
@@ -41,7 +43,7 @@ export class ClienteService {
   }
 
   updateCliente (cliente: Cliente): Observable<any>{
-    return this.http.put(this.urlClienti, cliente, this.httpOptions)
+    return this.http.put(`${this.urlClienti}/${cliente.id}`, cliente, this.httpOptions)
     .pipe(
       tap(_ => this.log(`aggiornato cliente id=${cliente.id}`)),
       catchError(this.handleError<any>('updateCliente'))

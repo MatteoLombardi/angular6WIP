@@ -12,7 +12,7 @@ export class GraficoService {
   constructor(private _http:HttpClient) { }
 
   graficoClienti(){
-    return this._http.get('api/clienti').pipe(
+    return this._http.get('/api/values').pipe(
       map(result => result));
   }
 }
