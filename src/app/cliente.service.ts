@@ -22,10 +22,7 @@ export class ClienteService {
   }
 
   private urlClienti = '/api/values';
-  //private urlClienti = 'api/clienti';
-
-
-  
+    
   getClienti(): Observable<Cliente[]> {
     return this.http.get<Cliente[]>(this.urlClienti)
     .pipe(
