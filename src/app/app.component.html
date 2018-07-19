@@ -1,11 +1,25 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/clienti">Clienti</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="\images\bit_srl_logo.png" height="50" width="50" alt="BitLogo">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/clienti">Clienti</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 <router-outlet></router-outlet>
-<div>
-  <canvas #pippo id="pippo"> {{chart}} </canvas>
-</div>
+
 <app-messaggi></app-messaggi>

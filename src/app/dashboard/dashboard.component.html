@@ -1,10 +1,27 @@
-<h3>Clienti Principali</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let cliente of clienti" class="col-1-4"
-      routerLink="/dettaglio/{{cliente.id}}">
-    <div class="module cliente">
-      <h4>{{cliente.nome}}</h4>
-      <h4>Score: {{cliente.score}}</h4>
+<div class="container-fluid">
+  <div class="row" style="margin-top: 20px">
+    <div class="container text-center">
+      <h3>Clienti Principali</h3>
     </div>
-  </a>
+  </div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let cliente of clienti">
+      <div class="dash-box dash-box-color-3">
+        <div class="dash-box-icon">
+          <i class="fas fa-bold"></i>
+        </div>
+        <div class="dash-box-body">
+          <label>{{cliente.nome}}</label>
+          <span class="dash-box-count">{{cliente.score}}</span>
+        </div>
+
+        <div class="dash-box-action" routerLink="/dettaglio/{{cliente.id}}">
+          <button class="btn-change">Dettagli</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <canvas #pippo id="pippo"> {{chart}} </canvas>
+  </div>
 </div>

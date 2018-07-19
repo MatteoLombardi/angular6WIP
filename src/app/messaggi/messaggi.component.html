@@ -1,8 +1,9 @@
 <div *ngIf="messaggioService.messaggi.length">
-
-  <h2>Messaggi</h2>
-  <button class="clear"
-          (click)="messaggioService.clear()">Pulisci Cache</button>
-  <div *ngFor='let messaggio of messaggioService.messaggi'> {{messaggio}} </div>
-
+  <div class="row">
+    <div class="col-md-6 offset-md-1">
+      <label>Console log</label>
+      <button class="btn btn-info btn-xs" (click)="messaggioService.clear()">Pulisci Cache</button>
+      <div *ngFor='let messaggio of messaggioService.messaggi'> {{messaggio}} </div>
+    </div>
+  </div>
 </div>

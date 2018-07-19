@@ -1,16 +1,32 @@
 <div *ngIf="cliente">
+  <div class="container-fluid text-center">
+    <h2>Dettaglio di {{cliente.nome | uppercase}}</h2>
 
-  <h2>Dettaglio di {{cliente.nome | uppercase}}</h2>
-  <div><span>id: </span>{{cliente.id}}</div>
-  <div>
-    <label>nome:
-      <input [(ngModel)]="cliente.nome" placeholder="nome"/>
-    </label>
-    <label>score:
-      <input [(ngModel)]="cliente.score" placeholder="score"/>
-    </label>
-    <button (click)="goBack()">Torna indietro</button>
-    <button (click)="salva()">Salva modifiche</button>
+    <div>
+      <span>id: </span>{{cliente.id}}</div>
+    <div>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <label>Nome:
+            <input [(ngModel)]="cliente.nome" placeholder="Nome" class="form-control" />
+          </label>
+          <label>Fatturato:
+            <input type="number" [(ngModel)]="cliente.score" placeholder="Fatturato" class="form-control" />
+          </label>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <label>Indirizzo:
+              <input [(ngModel)]="cliente.indirizzo" placeholder="Indirizzo" class="form-control" />
+            </label>
+            <label>Data:
+              <input type="date" [(ngModel)]="cliente.data" placeholder="Data" class="form-control" />
+            </label>
+          </div>
+      </div>
+      <div class="container text-center">
+        <button class="btn btn-success btn-block" (click)="salva()">Salva modifiche</button>
+        <button class="btn btn-default btn-block" (click)="goBack()">Torna indietro</button>
+      </div>
+    </div>
   </div>
-
 </div>

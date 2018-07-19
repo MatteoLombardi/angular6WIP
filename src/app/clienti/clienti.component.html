@@ -1,14 +1,42 @@
-<h2>I nostri Clienti</h2>
-<ul class="clienti">
-  <li *ngFor="let cliente of clienti">
-    <a routerLink="/dettaglio/{{cliente.id}}">
-    <span class="badge">{{cliente.id}}</span> {{cliente.nome}}
-    </a>
-    <button class="delete" title="Elimina Cliente"
-  (click)="delete(cliente)">x</button>
-  </li>
-</ul>
-<div>
+<div class="container-fluid text-center">
+  <h2>I nostri Clienti</h2>
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <table id="BitTabella" class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <th>Nome Cliente</th>
+          <th>Fatturato</th>
+          <th>Indirizzo</th>
+          <th>Data inizio</th>
+          <th>Modifica</th>
+          <th>Elimina</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of clienti">
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.score}}</td>
+            <td>Coming soon</td>
+            <td>Coming soon</td>
+            <td>
+              <p data-placement="top" data-toggle="tooltip" title="Edit">
+                <button class="btn btn-info btn-xs" data-title="Modifica" routerLink="/dettaglio/{{cliente.id}}">
+                  <span class="fas fa-pen-alt"></span>
+                </button>
+              </p>
+            </td>
+            <td>
+              <p data-placement="top" data-toggle="tooltip" title="Delete">
+                <button class="btn btn-danger btn-xs" data-title="Delete" (click)="delete(cliente)">
+                  <span class="far fa-trash-alt"></span>
+                </button>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div>
     <label>Nuovo cliente:
       <input #nomeCliente />
     </label>
@@ -16,3 +44,4 @@
       Inserisci
     </button>
   </div>
+</div>
