@@ -1,6 +1,6 @@
 body{
-  background-color: #1b1b1b;
-  color: #c7c7c7;
+  background-color: #c7c7c7;
+  color: #1b1b1b;
 }
 .dash-box {
   position: relative;
@@ -98,20 +98,17 @@ font-size:22px;
 }
 
 .dash-box.dash-box-color-3 {
-  background: rgb(1,196,76);
-  background: -moz-linear-gradient(top, rgba(1,196,76,1) 0%, rgba(108,83,220,1) 100%);
-  background: -webkit-linear-gradient(top, rgba(1,196,76,1) 0%,rgba(108,83,220,1) 100%);
-  background: linear-gradient(to bottom, rgba(1,196,76,1) 0%,rgba(108,83,220,1) 100%);
+  background: #1b1b1b;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b747f7', endColorstr='#6c53dc',GradientType=0 );
 }
 .dash-box-color-3 .dash-box-icon:after {
-  background: rgba(1,196,76, 0.76);
+  background: white;
 }
 .dash-box-color-3 .dash-box-icon:before {
-  background: rgba(108,83,220, 0.66);
+  background: #1b1b1b;
 }
 .dash-box-color-3 .dash-box-icon > i {
-  background: #8150e4;
+  background: #1b1b1b;
 }
 .btn-change{
   background: lightseagreen;
@@ -124,6 +121,69 @@ font-size:22px;
 }
 .btn-change:hover{
   -webkit-transform: scale(1.1);
-  background: #01C44C;
+  background: rgb(1,175,171);
   cursor: pointer;
+}
+.inserisci{
+  background-color: rgb(1,175,171);
+  border-color: rgb(1,175,171);
+}
+#footer{
+	float: left;
+	display: inline;
+	width: 100%;
+	padding: 20px;
+	background-color: #1b1b1b;
+}
+
+
+.footer_left{
+	float: left;
+	display: inline;
+	width: 100%;
+}
+
+
+.footer_left > p {
+  color: #ffffff;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+
+.footer_left > p a {  
+  font-weight: bold;
+}
+
+
+.footer_right{
+	float: left;
+	display: inline;
+	width: 100%;
+}
+
+
+.social_nav{
+	text-align: right;	
+}
+
+
+.social_nav li{
+	display: inline-block;
+}
+
+
+.social_nav li a {
+  border: 1px solid #fff;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 18px;
+  height: 30px;
+  margin-left: 5px;
+  text-align: center;
+  width: 35px;
+  line-height: 28px;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }

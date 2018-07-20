@@ -4,26 +4,30 @@ import { ClienteService } from '../cliente.service';
 
 import { GraficoService } from '../grafico.service';
 import { Chart } from 'chart.js';
- 
+import { Observable, of } from '../../../node_modules/rxjs';
+
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: [ './dashboard.component.css' ]
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  [x: string]: any;
   clienti: Cliente[] = [];
   public names: string[];
   public scores: number[];
   public coloriGrafico: string[];
   public chart: Chart;
  
-  constructor(private clienteService: ClienteService, private _grafico: GraficoService) { 
+
+  constructor(private clienteService: ClienteService, private _grafico: GraficoService) {
     this.names = [];
     this.scores = [];
     this.coloriGrafico = this.colorGenerator();
 
   }
- 
+
   ngOnInit() {
     this.getClienti();
     this._grafico.graficoClienti()
@@ -58,7 +62,7 @@ export class DashboardComponent implements OnInit {
       });
 
   }
- 
+
   getClienti(): void {
     this.clienteService.getClienti()
       .subscribe(clienti => this.clienti = clienti.slice(0, 4));
@@ -67,5 +71,13 @@ export class DashboardComponent implements OnInit {
     const res = new Array(num);
     res.fill('');
     return res.map(() => "#" + Math.random().toString(16).slice(2, 8));
+  }
+ 
+  private handleError<T>(operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      this.log(`${operation} fallita: ${error.message}`);
+      return of(result as T);
+    }
   }
 }

@@ -1,27 +1,33 @@
 <div class="container-fluid">
-  <div class="row" style="margin-top: 20px">
-    <div class="container text-center">
-      <h3>Clienti Principali</h3>
+  <div id="export-dash">
+    <div class="row" style="margin-top: 20px">
+      <div class="container text-center">
+        <h3>Clienti Principali</h3>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-3" *ngFor="let cliente of clienti">
-      <div class="dash-box dash-box-color-3">
-        <div class="dash-box-icon">
-          <i class="fas fa-bold"></i>
-        </div>
-        <div class="dash-box-body">
-          <label>{{cliente.nome}}</label>
-          <span class="dash-box-count">{{cliente.score}}</span>
-        </div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let cliente of clienti">
+        <div class="dash-box dash-box-color-3">
+          <div class="dash-box-icon">
+            <i class="fas fa-bold"></i>
+          </div>
+          <div class="dash-box-body">
+            <label style="color:#c7c7c7">{{cliente.nome}}</label>
+            <span class="dash-box-count">{{cliente.score}}</span>
+          </div>
 
-        <div class="dash-box-action" routerLink="/dettaglio/{{cliente.id}}">
-          <button class="btn-change">Dettagli</button>
+          <div class="dash-box-action" routerLink="/dettaglio/{{cliente.id}}">
+            <button class="btn-change">Dettagli</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div>
-    <canvas #pippo id="pippo"> {{chart}} </canvas>
+  <div id="export-graph">
+    <div class="row" style="margin-top: 20px">
+      <div class="col-md-6 offset-md-1">
+        <canvas #pippo id="pippo"> {{chart}} </canvas>
+      </div>
+    </div>
   </div>
 </div>
