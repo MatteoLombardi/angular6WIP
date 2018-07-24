@@ -1,7 +1,15 @@
 <div class="container-fluid text-center" style="margin-top:150px; margin-bottom: 350px">
   <h2>I nostri Clienti</h2>
   <div class="row">
+    <div style="margin-left:8%; margin-bottom:-6px;">
+      <button type="button" class="btn btn-bit btn-change" data-toggle="modal" data-target="#insertModal">
+        Nuovo
+      </button>
+    </div>
+  </div>
+  <div class="row">
     <div class="col-md-10 offset-md-1">
+      <table datatable [dtOptions]="dtOptions" class="table table-bordered table-hover"></table>
       <table id="BitTabella" class="table table-bordered table-hover">
         <thead class="thead-dark">
           <th>Nome Cliente</th>
@@ -36,12 +44,19 @@
       </table>
     </div>
   </div>
-  <div>
-    <label>Nuovo cliente:
-      <input class="form-control" #nomeCliente />
-    </label>
-    <button class="btn btn-default inserisci"(click)="insert(nomeCliente.value); nomeCliente.value=''">
-      Inserisci
-    </button>
+</div>
+<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Inserimento nuovo cliente </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-form-cliente [param] = "clienti"></app-form-cliente>
+      </div>
+    </div>
   </div>
 </div>

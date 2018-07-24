@@ -1,5 +1,5 @@
 body{
-  background-color: #c7c7c7;
+  background-color: #dee4e7;
   color: #1b1b1b;
 }
 .dash-box {
@@ -186,4 +186,19 @@ font-size:22px;
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.btn-bit{
+  background-color: rgb(1,175,171);
+  border-color: rgb(1,175,171);
+  cursor: pointer;
+  color: white;
 }

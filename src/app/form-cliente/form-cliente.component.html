@@ -1,0 +1,40 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <form (ngSubmit)="onSubmit()" #clienteForm="ngForm">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input type="text" class="form-control" id="nome" required [(ngModel)]="model.nome" name="nome" #nome="ngModel">
+        <div [hidden]="nome.valid || nome.pristine" class="alert alert-danger">
+          Nome obbligatorio
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="fatturato">Fatturato</label>
+        <input type="number" class="form-control" id="fatturato" required [(ngModel)]="model.score" name="score" #score="ngModel">
+        <div [hidden]="score.valid || score.pristine" class="alert alert-danger">
+          Fatturato obbligatorio
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="indirizzo">Indirizzo</label>
+        <input type="text" class="form-control" id="indirizzo" required [(ngModel)]="model.indirizzo" name="indirizzo" #indirizzo="ngModel">
+        <div [hidden]="indirizzo.valid || indirizzo.pristine" class="alert alert-danger">
+          Indirizzo obbligatorio
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="data">Data inizio</label>
+        <input type="date" class="form-control" id="data" required [(ngModel)]="model.data" name="data" #data="ngModel">
+        <div [hidden]="data.valid || data.pristine" class="alert alert-danger">
+          Data obbligatoria
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!clienteForm.form.valid">Inserisci</button>
+    </form>
+  </div>
+  <div [hidden]="!submitted">
+    <h2>Cliente {{model.nome}} inserito correttamente</h2>
+  </div>
+</div>
